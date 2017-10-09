@@ -2,10 +2,10 @@ altgraph==0.10.2
 astroid==1.5.3
 backports.functools-lru-cache==1.4
 bdist-mpkg==0.5.0
-bonjour-py==0.3
 certifi==2017.7.27.1
 chardet==3.0.4
 configparser==3.5.0
+dj-database-url==0.4.2
 Django==1.11.4
 enum34==1.1.6
 idna==2.6
@@ -61,6 +61,7 @@ pyobjc-framework-WebKit==2.5.1
 pyOpenSSL==0.13.1
 pyparsing==2.0.1
 python-dateutil==1.5
+python-decouple==3.1
 pytz==2013.7
 requests==2.18.4
 scipy==0.13.0b1
