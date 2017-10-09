@@ -1,0 +1,96 @@
+/* Custom Stylesheet */
+
+
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+.pagination-center{
+    text-align:center;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #29b6f6;
+    box-shadow: 0 1px 0 0 #29b6f6;
+}
+
+.btn-flat{
+    padding: 0px 0px 0px 0px; 
+    margin-left: 15px;
+}
+
+.btn-flat:hover{
+    color: #29b6f6;
+    background-color: #FFF;
+}
+
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #29b6f6;
+    box-shadow: 0 1px 0 0 #29b6f6;
+}
+
+.dataTables_filter input:focus {
+    border-bottom: 1px solid #29b6f6 !important;
+    box-shadow: 0 1px 0 0 #29b6f6 !important;
+ }
+
+/* input[type=search].valid {
+    border-bottom: 1px solid #29b6f6;
+    box-shadow: 0 1px 0 0 #29b6f6;
+} */
+
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #29b6f6;
+    box-shadow: 0 1px 0 0 #29b6f6;
+}
+
+.input-field input[type=text]:focus + label {
+    color: #29b6f6;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #29b6f6;
+    box-shadow: 0 1px 0 0 #29b6f6;
+  }
+
+.page-class{
+    color: #FFF !important;
+    background-color: #29b6f6 !important;
+}
+
+.history-margin{
+    margin-top:78px;
+}
+
+.container-width {
+    width: 100%;
+}
+
+.container-margin {
+  margin-top: 50px;
+
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.output-image {
+    max-width: 400px;
+    max-height: 300px;
+}
+
+.invalid-card {
+    box-shadow: 0px 0px 0px 2px rgba(255, 0, 0, 1);
+}

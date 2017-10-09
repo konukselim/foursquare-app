@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>The Ultimate Foursquare Client</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../static/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+ <body>
+    <script>
+        (function() {
+            window.historyData = JSON.parse("{{histories|escapejs}}");
+            window.page_number = '{{page_number}}';
+        }());
+    </script>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">The Ultimate Foursquare Client</a>
+        </div>
+    </nav>
+
+    <div class="container container-margin container-width">
+        <form method="POST" class="post-form" action="">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field col s3 offset-s3">
+                        <input id="look_for" name="look_for" type="text" class="validate">
+                        <label for="look_for">I am looking for..</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input id="location" name="location" type="text" class="validate">
+                        <label for="location">Location</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button id="submitReq" name="search_btn" class="btn waves-effect light-blue lighten-1 waves-light col s2 offset-s5" type="submit" name="action">Search
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        
+        <div class="row container-margin">
+            <div class="col s12">
+                {% if tableData %}
+                <div class="col s8">
+                    <table id="example" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Checkin Count</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Checkin Count</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for data in tableData %}
+                            <tr>
+                                {% if data.url == ''%}
+                                    <td>{{ data.name }}</td>
+                                {% else %}
+                                    <td><a href= {{ data.url }} target="_blank">{{ data.name }}</a></td>
+                                {% endif %}
+                                <td>{{ data.phoneNumber }}</td>
+                                <td>{{ data.checkinCount }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+
+                {% if tableData %}
+                    <div class="col s4">
+                {% else %}
+                    <div class="col s4 offset-s4">
+                {% endif %}
+                    
+                    <ul class="history-margin" id="historyListId">
+                        
+                    </ul>
+                    <ul id="pagination-id" class="pagination pagination-center">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../static/js/materialize.js"></script>
+    <script src="../static/js/jquery.dataTables.min.js"></script>
+    <script src="../static/js/jquery.twbsPagination.js" type="text/javascript"></script>
+    <script src="../static/js/init.js"></script> 
+</body>
+
+</html>
